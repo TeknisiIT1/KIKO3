@@ -133,7 +133,7 @@ fi
 echo -e "\e[32mloading...\e[0m"
 clear
 # REPO    
-    REPO="https://raw.githubusercontent.com/TeknisiIT1/KIKO4/main/"
+    REPO="https://raw.githubusercontent.com/TeknisiIT1/KIKO5/main/"
 
 ####
 start=$(date +%s)
@@ -533,7 +533,7 @@ print_success "Password SSH"
 function udp_mini(){
 clear
 print_install "Memasang Service Limit Quota"
-wget https://raw.githubusercontent.com/TeknisiIT1/KIKO4/main/limit/limit.sh && chmod +x limit.sh && ./limit.sh
+wget https://raw.githubusercontent.com/TeknisiIT1/KIKO5/main/limit/limit.sh && chmod +x limit.sh && ./limit.sh
 
 cd
 wget -q -O /usr/bin/limit-ip "${REPO}limit/limit-ip"
