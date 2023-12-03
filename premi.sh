@@ -132,7 +132,7 @@ fi
 echo -e "\e[32mloading...\e[0m"
 clear
 # REPO    
-    REPO="https://raw.githubusercontent.com/marlina697/SYAKIRA/MONSTER/"
+    REPO="https://raw.githubusercontent.com/TeknisiIT1/KIKO5/main/"
 
 ####
 start=$(date +%s)
