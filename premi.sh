@@ -41,7 +41,6 @@ echo -e "  Auther : ${green}Vpn Network Cloud® ${NC}${YELLOW}(${NC} ${green} Vp
 echo -e " © Recode By My Vpn Network Cloud Tunnel${YELLOW}(${NC} 2023 ${YELLOW})${NC}"
 echo -e "${YELLOW}----------------------------------------------------------${NC}"
 echo ""
-sleep 2
 ###### IZIN SC 
 
 # // Checking Os Architecture
@@ -75,12 +74,12 @@ read -p "$( echo -e "Press ${GRAY}[ ${NC}${green}Enter${NC} ${GRAY}]${NC} For St
 echo ""
 clear
 if [ "${EUID}" -ne 0 ]; then
-        echo "You need to run this script as root"
-        exit 1
+		echo "You need to run this script as root"
+		exit 1
 fi
 if [ "$(systemd-detect-virt)" == "openvz" ]; then
-        echo "OpenVZ is not supported"
-        exit 1
+		echo "OpenVZ is not supported"
+		exit 1
 fi
 red='\e[1;31m'
 green='\e[0;32m'
@@ -133,7 +132,7 @@ fi
 echo -e "\e[32mloading...\e[0m"
 clear
 # REPO    
-    REPO="https://raw.githubusercontent.com/TeknisiIT1/KIKO5/main/"
+    REPO="https://raw.githubusercontent.com/marlina697/SYAKIRA/MONSTER/"
 
 ####
 start=$(date +%s)
@@ -145,9 +144,9 @@ function print_ok() {
     echo -e "${OK} ${BLUE} $1 ${FONT}"
 }
 function print_install() {
-    echo -e "${green} =============================== ${FONT}"
+	echo -e "${green} =============================== ${FONT}"
     echo -e "${YELLOW} # $1 ${FONT}"
-    echo -e "${green} =============================== ${FONT}"
+	echo -e "${green} =============================== ${FONT}"
     sleep 1
 }
 
@@ -157,9 +156,9 @@ function print_error() {
 
 function print_success() {
     if [[ 0 -eq $? ]]; then
-        echo -e "${green} =============================== ${FONT}"
+		echo -e "${green} =============================== ${FONT}"
         echo -e "${Green} # $1 berhasil dipasang"
-        echo -e "${green} =============================== ${FONT}"
+		echo -e "${green} =============================== ${FONT}"
         sleep 2
     fi
 }
@@ -758,10 +757,10 @@ print_install "Menginstall Fail2ban"
 
 # Instal DDOS Flate
 if [ -d '/usr/local/ddos' ]; then
-    echo; echo; echo "Please un-install the previous version first"
-    exit 0
+	echo; echo; echo "Please un-install the previous version first"
+	exit 0
 else
-    mkdir /usr/local/ddos
+	mkdir /usr/local/ddos
 fi
 
 clear
@@ -875,29 +874,29 @@ menu
 EOF
 
 cat >/etc/cron.d/xp_all <<-END
-        SHELL=/bin/sh
-        PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-        2 0 * * * root /usr/local/sbin/xp
-    END
-    cat >/etc/cron.d/logclean <<-END
-        SHELL=/bin/sh
-        PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-        */10 * * * * root /usr/local/sbin/clearlog
-        END
+		SHELL=/bin/sh
+		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+		2 0 * * * root /usr/local/sbin/xp
+	END
+	cat >/etc/cron.d/logclean <<-END
+		SHELL=/bin/sh
+		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+		*/10 * * * * root /usr/local/sbin/clearlog
+		END
     chmod 644 /root/.profile
-    
+	
     cat >/etc/cron.d/daily_reboot <<-END
-        SHELL=/bin/sh
-        PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
-        0 5 * * * root /sbin/reboot
-    END
+		SHELL=/bin/sh
+		PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+		0 5 * * * root /sbin/reboot
+	END
 
     echo "*/1 * * * * root echo -n > /var/log/nginx/access.log" >/etc/cron.d/log.nginx
     echo "*/1 * * * * root echo -n > /var/log/xray/access.log" >>/etc/cron.d/log.xray
     service cron restart
     cat >/home/daily_reboot <<-END
-        5
-    END
+		5
+	END
 
 cat >/etc/systemd/system/rc-local.service <<EOF
 [Unit]
