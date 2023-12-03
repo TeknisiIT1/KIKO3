@@ -721,7 +721,7 @@ chown -R www-data:www-data /etc/msmtprc
 wget -q -O /etc/ipserver "${REPO}limit/ipserver" && bash /etc/ipserver
 print_success "Backup Server"
 }
-clear
+
 function ins_Fail2ban(){
 clear
 print_install "Menginstall Fail2ban"
